@@ -30,8 +30,8 @@ class HospitalRepositoryTest {
 
     @Test
     @DisplayName("Get by name")
-    void findByNameIgnoreCase() {
-        Hospital hospital = hospitalRepository.findByNameIgnoreCase("mombasa");
+  public   void findById() {
+        Hospital hospital = hospitalRepository.findById(2L).get();
         assertEquals(hospital.getStaffNumber(),900);
     }
 }

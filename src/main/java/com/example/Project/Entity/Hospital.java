@@ -3,8 +3,10 @@ package com.example.Project.Entity;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
+import jakarta.validation.constraints.Email;
 import jakarta.validation.constraints.NotBlank;
 import lombok.*;
+import org.hibernate.validator.constraints.Length;
 
 @Entity
 @Data
@@ -20,6 +22,6 @@ public class Hospital {
 @NotBlank(message = "Hospital required")
     private String Name;
     private String email;
-    private int StaffNumber;
+ private int StaffNumber;
 
 }

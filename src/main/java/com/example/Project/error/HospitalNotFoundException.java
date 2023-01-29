@@ -1,9 +1,4 @@
 package com.example.Project.error;
-
-import org.springframework.stereotype.Component;
-
-
-
 public class HospitalNotFoundException extends Exception{
     public HospitalNotFoundException() {
         super();

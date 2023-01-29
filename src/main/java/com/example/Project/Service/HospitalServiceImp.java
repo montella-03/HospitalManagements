@@ -38,7 +38,7 @@ public class HospitalServiceImp implements HospitalService{
     @Override
     public Hospital fetchHospitalById(Long id) throws HospitalNotFoundException {
         Optional<Hospital> hospital=hospitalRepository.findById(id);
-        if(hospital.isEmpty())
+        if(!hospital.isPresent())
             throw new HospitalNotFoundException("Hospital is not available");
         return hospital.get();
     }

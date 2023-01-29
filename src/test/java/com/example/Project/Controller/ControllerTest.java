@@ -57,14 +57,13 @@ class ControllerTest {
         Mockito.when(hospitalService.fetchHospitalById(3L)).thenReturn(hospital);
         mockMvc.perform(get("/hospitals/3")
                 .contentType(MediaType.APPLICATION_JSON)
-                .content(
-                        """
-                                {
-                                \t"name": "molo",
-                                \t"email": "molo@gmail.com",
-                                \t"id": 3,
-                                \t"staffNumber": 500
-                                }"""
+                .content("{\n" +
+                        "\t\t\"email\": \"molo@gmail.com\",\n" +
+                        "\t\t\"name\": \"molo\",\n" +
+                        "\t\t\"id\": 3,\n" +
+                        "\t\t\"staffNumber\": 500\n" +
+                        "\t}"
+
                 ))
                 .andExpect(status().isOk());
     }
